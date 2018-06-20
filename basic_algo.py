@@ -1,10 +1,16 @@
 import numpy as np
 
-# a = 'abcabba'
-# b = 'cbabac'
+a = 'abcabba'
+b = 'cbabac'
+# 5
 
-a = 'abcabc'
-b = 'abc'
+# a = 'abcabc'
+# b = 'bcbd'
+# 4
+
+# a = 'abcabc'
+# b = 'abc'
+# 3
 
 N = len(a)
 M = len(b)
@@ -15,7 +21,7 @@ V = np.zeros((2*MAX+1), np.int)
 dist = -1
 
 for D in range(MAX):
-    for k in range(-D, D, 2):
+    for k in range(-D, D+1, 2):
         if k == -D or k != D and V[k-1] < V[k+1]:
             x = V[k+1]
         else:
@@ -37,4 +43,3 @@ for D in range(MAX):
         break
 
 print(dist)
-print(V)
